@@ -1,41 +1,41 @@
-//¹®ÀåÀÇ ¿µ¹®ÀÚ,¼ýÀÚ,±¸µÎÁ¡(./,/!) °³¼ö ¼¼±â(ºó¶óÀÎÀÌ ÀÔ·ÂµÇ¸é ÇÁ·Î±×·¥ Á¾·á)(if¹® »ç¿ë)#include <iostream>
+//ë¬¸ìž¥ì˜ ì˜ë¬¸ìž,ìˆ«ìž,êµ¬ë‘ì (./,/!) ê°œìˆ˜ ì„¸ê¸°(ë¹ˆë¼ì¸ì´ ìž…ë ¥ë˜ë©´ í”„ë¡œê·¸ëž¨ ì¢…ë£Œ)(ifë¬¸ ì‚¬ìš©)
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	char text[100][80];						//100°³ÀÇ ¹®ÀåÀ» ÀÔ·ÂÇÒ¼ö ÀÖµµ·Ï ÃÊ±âÈ­
+	char text[100][80];						//100ê°œì˜ ë¬¸ìž¥ì„ ìž…ë ¥í• ìˆ˜ ìžˆë„ë¡ ì´ˆê¸°í™”
 	for (int i = 0; i < 100; i++)
 	{
 		cout << i + 1 << ':';
-		gets_s(text[i], 80);				//¹®ÀåÀ» ÀÔ·Â¹ÞÀ½
-		if (!text[i][0])					//¿£ÅÍ°¡ ÀÔ·ÂµÇ¸é ÇÁ·Î±×·¥ Á¾·á
+		gets_s(text[i], 80);				//ë¬¸ìž¥ì„ ìž…ë ¥ë°›ìŒ
+		if (!text[i][0])					//ì—”í„°ê°€ ìž…ë ¥ë˜ë©´ í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
 		{
-			cout << "ÇÁ·Î±×·¥ Á¾·á";
+			cout << "í”„ë¡œê·¸ëž¨ ì¢…ë£Œ";
 			break;
 		}
-		int cnt1 = 0;						//¿µ¹®ÀÚ °³¼ö º¯¼ö
-		int cnt2 = 0;						//¼ýÀÚ °³¼ö º¯¼ö
-		int cnt3 = 0;						//±¸µÎÁ¡ °³¼ö º¯¼ö
+		int cnt1 = 0;						//ì˜ë¬¸ìž ê°œìˆ˜ ë³€ìˆ˜
+		int cnt2 = 0;						//ìˆ«ìž ê°œìˆ˜ ë³€ìˆ˜
+		int cnt3 = 0;						//êµ¬ë‘ì  ê°œìˆ˜ ë³€ìˆ˜
 		for (int j = 0; text[i][j]; j++)
 		{
-			if ((text[i][j] >= 'a'&&text[i][j] <= 'z') ||						//¿µ¹®ÀÚ °³¼ö Ä«¿îÆ®
+			if ((text[i][j] >= 'a'&&text[i][j] <= 'z') ||						//ì˜ë¬¸ìž ê°œìˆ˜ ì¹´ìš´íŠ¸
 				(text[i][j] >= 'A'&&text[i][j] <= 'Z'))
 			{
 				cnt1++;
 			}
-			if (text[i][j] >= '0'&& text[i][j] <= '9')								//¼ýÀÚ °³¼ö Ä«¿îÆ®
+			if (text[i][j] >= '0'&& text[i][j] <= '9')								//ìˆ«ìž ê°œìˆ˜ ì¹´ìš´íŠ¸
 			{
 				cnt2++;
 			}
-			if (text[i][j] == ',' || text[i][j] == '.' || text[i][j] == '!')	//±¸µÎÁ¡ °³¼ö Ä«¿îÆ®
+			if (text[i][j] == ',' || text[i][j] == '.' || text[i][j] == '!')	//êµ¬ë‘ì  ê°œìˆ˜ ì¹´ìš´íŠ¸
 			{
 				cnt3++;
 			}
 		}
-		cout << "¿µ¹®ÀÚ:" << cnt1 << "°³\n";
-		cout << "¼ýÀÚ:" << cnt2 << "°³\n";
-		cout << "±¸µÎÁ¡:" << cnt3 << "°³\n";
+		cout << "ì˜ë¬¸ìž:" << cnt1 << "ê°œ\n";
+		cout << "ìˆ«ìž:" << cnt2 << "ê°œ\n";
+		cout << "êµ¬ë‘ì :" << cnt3 << "ê°œ\n";
 	}
 	return 0;
 }
