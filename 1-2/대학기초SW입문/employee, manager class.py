@@ -1,0 +1,25 @@
+class Employee:
+     def __init__(self,name,salary):
+          self.name=name
+          self.salary=salary
+
+     def getSalary(self):
+          return salary
+
+
+class Manager(Employee):
+     def __init__(self,name,salary,bonus):
+          super().__init__(name,salary)
+          self.bonus=bonus
+
+     def getSalary(self):
+          salary=super().getSalary()
+          return salary+self.bonus
+
+     def __repr__(self):
+          return "이름:"+self.name+"\n월급:"+str(self.salary)+\
+                 "\n보너스:"+str(self.bonus)
+     
+
+kim=Manager("김지민",100000000,10000000)
+print(kim)
