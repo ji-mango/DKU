@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 김지민 </title>
+        <style>
+            h1 {
+                text-align : center;
+                margin-left : 40px;
+                margin-right : 40px;
+            }
+            .like {
+                color: red;
+                font-size : 20px;
+            }
+            .not_like {
+                color: blue;
+                font-size : 20px;
+            }
+        </style>
+        <script>
+            function show() {
+                document.getElementById("fig").src="지민사진.jpg";
+            }
+            function hide() {
+                document.getElementById("fig").src="";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 onmouseover="show()" onmouseout="hide()">소프트웨어학과 32191105 김지민</h1>
+        <hr>
+        <div><img id="fig" src="" style="width:40%"></div>
+        저는 소프트웨어학과 32191105 김지민입니다.<br>
+        좋아하는 음식은 <span class='like'>마라탕</span>, <span class='like'>차돌박이</span>이고 
+        싫어하는 음식은 <span class='not_like'>동태탕</span>입니다<br>
+        
+    </body>
+</html>
