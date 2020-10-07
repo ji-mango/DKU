@@ -1,0 +1,19 @@
+header {
+    display : block;
+    position : relative;
+    border : 1px solid lightgray;
+    background : yellowgreen;
+}
+section {
+    display : block;
+    position : relative;
+    border : 1px solid lightgray;
+    background : plum;
+}
+
+footer {
+    display : block;
+    position : relative;
+    border : 1px solid lightgray;
+    background : gray;
+}

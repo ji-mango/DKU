@@ -1,0 +1,33 @@
+header {
+    display : block;
+    position : relative;
+    border : 1px solid lightgray;
+    background : yellowgreen;
+}
+ nav {
+     display : inline-block;
+     position : absolute;
+     border : 1px solid lightgray;
+     left : 10px;
+     top : 470px;
+     background : skyblue;
+     padding-bottom: 390px;
+ }
+
+section {
+    display : inline-block;
+    position : absolute;
+    border : 1px solid lightgray;
+    left : 180px;
+    top : 470px;
+    background : plum;
+}
+
+footer {
+    display : inline-block;
+    position : absolute;
+    border : 1px solid lightgray;
+    left : 10px;
+    top : 1050px;
+    background : gray;
+}
