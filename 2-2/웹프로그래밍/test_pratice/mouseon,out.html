@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹페이지 구성 요소</title>
+        <style>
+            body {
+                background-color:linen; color : green;
+                margin-left : 40px; margin-right : 40px;
+            }
+            h3 {text-align : center; color : darkred;}
+            hr { height : 10px; border : solid grey;
+            background-color : grey;}
+            span { color : violet; font-size:20px;}
+        </style>
+        <script>
+            function show() {
+                document.getElementById("fig").src="빵식.jpg";
+            }
+            function hide() {
+                document.getElementById("fig").src="";
+            }
+            function show_me() {
+                document.getElementById("me").src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20140122_231%2Fhamlet50_1390393944354EmYRP_JPEG%2FK-5.jpg&type=sc960_832";
+            }
+            function hide_me() {
+                document.getElementById("me").src="";
+            }
+        </script>
+    </head>
+    <body>
+        <h3 onmouseover="show()" onmouseout="hide()">Elvis</h3>
+        <hr>
+        <div><img id="fig" src=""></div>
+        he was~~~. <span onmouseover="show_me()" onmouseout="hide_me()">Love Me Tender</span>.
+        <div><img id="me" src=""></div>he is ~~.
+        "<span>the King of Rock and Roll</span>".
+    </body>
+</html>
