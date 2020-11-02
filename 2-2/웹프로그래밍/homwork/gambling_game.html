@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function change() {
+                var span=document.getElementById("first");
+                span.innerHTML='1'
+            }
+        </script>
+        <style>
+            div {
+            color : darkblue; 
+            font-size:10em; 
+            background-color:rosybrown; 
+            width:400px;
+            text-align:center;
+            }
+            #result {
+            color: violet;
+            font-size: 20px;
+            }
+        </style>
+        <script>
+            let push_check = new Array();
+            let nums = new Array();
+      
+            function change(name, s) {
+              if (push_check[s - 1] != 1) {
+                let p = document.getElementById(name);
+                let n1 = Math.floor(Math.random() * 3);
+                let n2 = Math.floor(Math.random() * 3);
+                let n3 = Math.floor(Math.random() * 3);
+                if (s == 1) {
+                  p.innerHTML = n1;
+                  nums[s - 1] = n1;
+                } 
+                else if (s == 2) {
+                  p.innerHTML = n2;
+                  nums[s - 1] = n2;
+                } 
+                else if ( s==3 ) {
+                  p.innerHTML = n3;
+                  nums[s - 1] = n3;
+                }
+                push_check[s - 1] = 1;
+              }
+              if (s == 3) {
+                let r = nums[0];
+                let compare = 1;
+                for (let i = 0; i < nums.length; i++) {
+                  if (nums[i] != r) {
+                    compare = 0;
+                    break;
+                  }
+                }
+                let result = document.getElementById("result");
+                if (compare == 1) {
+                  result.innerHTML = "Success(click here to do again)";
+                } else {
+                  result.innerHTML = "fail(click here to do again)";
+                }
+              }
+            }
+      
+            function restart() {
+              location.reload();
+            }
+          </script>
+    </head>
+    <body>
+        <h3>갬블링 게임</h3>
+        각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다. 모두 같은 수가 나오면 승리합니다.
+        <hr>
+        <div>
+            <span id="first" onclick="change('first', '1')">0</span>
+            <span id="second" onclick="change('second', '2')">0</span>
+            <span id="third" onclick="change('third', '3')">0</span>
+          </div>
+      
+          <span id="result"onclick="restart()"></span>
+    </body>
+</html>
