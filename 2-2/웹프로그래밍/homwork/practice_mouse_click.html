@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table {
+                border : 1px solid black;
+                border-collapse : collapse;
+            }
+            td {
+                border : 1px solid black;
+                width : 50px;
+                height : 50px;
+                padding : 0px;
+            }
+            img {
+                width:45px;
+                height: 45px;
+            }
+        </style>
+        <script>
+            var next=0;
+            var img = new Image();
+            img.src="지민사진.jpg"; 
+            function set()
+            {
+                var table = document.getElementById("random_table");
+            
+                for( var i = 0; i < 10; i++ )
+                {
+                    var row = document.createElement("tr");
+                    for( var j = 0; j < 10; j++ )
+                    {
+                        var col = document.createElement("td");
+                        col.innerHTML = "<img src=''>"
+                        row.appendChild(col);
+                    }
+                    table.appendChild(row);
+                }
+            
+                    for(var i=0;i<100;i++)
+                    {
+                        document.images[i].onclick=moveImage;
+                        document.images[i].style.visibility = "hidden";
+                    }
+                    moveImage();
+            }
+            function moveImage()
+            {
+                document.images[next].src="";
+                document.images[next].style.visibility = "hidden";
+                next = Math.floor(Math.random()*100);
+                document.images[next].src=img.src;
+                document.images[next].style.visibility = "visible";
+            }
+        </script>
+    </head>
+    <body onload="set()">
+        <table id="random_table"></table>
+    </body>
+</html>
