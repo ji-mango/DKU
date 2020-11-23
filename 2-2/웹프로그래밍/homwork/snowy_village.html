@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>눈 내리는 사걀의 마을</title>
+    <script src="https://kit.fontawesome.com/69cc74444b.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+          background-image: url(snow.jpg);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+    
+        div {
+          position: absolute;
+        }
+    
+        snow_make {
+          color: white;
+        }
+    
+        #main{
+          width: 130rem;
+          height: 50rem;
+        }
+      </style>
+      <script>
+        const div = document.getElementsByClassName("snow");
+        let fall = new Array(div.length);
+    
+        window.onload = () => {
+          const ct = document.getElementById('main');
+          
+          for(let i=0;i<30;i++)
+            {
+                let snow_div=document.createElement('div');
+                snow_div.className='snow';
+                snow_div.innerHTML='<snow_make class="far fa-snowflake"></i>';
+                ct.appendChild(snow_div);
+            }
+    
+          let width = window.innerWidth;
+          let height = window.innerHeight;
+     
+          for(let i=0; i<div.length; i++){
+            let x = Math.random()*130;
+            let y= Math.random()*50;
+            fall[i] = y;
+    
+            div[i].style.left = x+"rem";
+            div[i].style.top = y+"rem";
+          }
+        }
+    
+        let timer = setInterval("falling()", 100);
+    
+        function falling() {
+          for(let i=0; i<div.length; i++) {
+            fall[i] += 1;
+            div[i].style.top = fall[i] + "rem";
+            if(fall[i] > 50){
+              fall[i] = 0;
+            }
+          }
+        }
+      </script>
+  </head>
+ 
+  <body>
+    <div id="main"></div>
+  </body>
+</html>
