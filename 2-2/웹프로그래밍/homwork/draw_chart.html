@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>캔버스에 파이 차트 그리기</title>
+    </head>
+    <body>
+        <h3>학점 별로 학생 수를 입력하면 파이 차트로 비율 그리기</h3>
+        <hr>
+        A <input type="number" value="0" name="num"> 명
+        B <input type="number" value="0" name="num"> 명
+        C <input type="number" value="0" name="num"> 명 <br>
+        D <input type="number" value="0" name="num"> 명
+        E <input type="number" value="0" name="num"> 명
+        <button onclick="chart_draw()">차트그리기</button>
+        <canvas id="chart" width="1000" height="500"></canvas>
+
+        <script>
+          let colors = ["blue", "green", "yellow", "magenta", "red"];
+          let grades=["A", "B", "C", "D", "F"];
+          
+          function chart_draw() {
+            let val_list = new Array();
+            for(let i=0; i<grades.length; i++){
+            val_list.push(document.getElementsByName("num")[i].value);
+            val_list[i] = parseInt(val_list[i]);
+            }
+  
+            let sum = 0;
+            val_list.forEach(function(x) {sum += x;});
+  
+            const chart = document.getElementById("chart");
+            const context = chart.getContext("2d");
+            context.clearRect(0, 0, chart.width, chart.height);
+  
+            let per_list = new Array();
+            for(let i=0; i < grades.length; i++) {
+              context.font = "13px '맑은고딕'";
+              context.fillStyle = "black";
+              context.strokeText(grades[i] + " 학점" + parseInt(val_list[i]/sum*100) + "%" + " : " + colors[i], 0, 20+i*25);
+              per_list[i] = val_list[i]/sum*100;
+            }
+  
+            let angle = 0;
+            let X = 350, Y = 200;
+            let per_sum = 0;
+            per_list.forEach(function(x) {per_sum += x;});
+            for(let i=0; i<grades.length; i++) {
+              context.fillStyle = colors[i];
+              context.beginPath();
+              context.moveTo(X, Y);
+              context.arc(X, Y, 150, angle, angle + (Math.PI*2*(per_list[i]/per_sum)));
+              context.lineTo(X, Y);
+              context.fill();
+              angle += Math.PI*2*(per_list[i]/100);
+            }
+          }
+        </script>
+    </body>
+</html>
