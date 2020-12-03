@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>나의 단어장 만들기</h3>
+        <hr>
+        <div>
+            영어
+            <input id="eng" type="text" value="">
+        </div>
+        <div>
+            한글
+            <input id="kor" type="text" value="">
+        </div>
+        <br>
+        <input id="save" onclick="store()" type="button" value="단어 저장">
+        <input id="search" onclick="search()" type="button" value="영단어 검색">
+        <input id="del" onclick="del()" type="button" value="단어 삭제">
+        <input id="watch" onclick="window.open('2020-2-WebProg-3-HW13-Main2-김지민-32191105.html'); target='_blank'" type="button" value="전체 보기">
+
+        <script>
+            window.addEventListener("storage",storageEventListener,false);
+            function storageEventListener(e) {
+
+            }
+        </script>
+        <script>
+            let eng=document.getElementById("eng");
+            let kor=document.getElementById("kor");
+            function store() {
+                if(!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                else if(localStorage.getItem(eng.value)==null)
+                {
+                        localStorage.setItem(eng.value,kor.value);
+                }
+                else
+                {
+                    let con=confirm(eng.value+"가 이미 있습니다. 수정하시겠습니까?<br>")
+                    if(con)
+                    {
+                        localStorage.setItem(eng.value,kor.value);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+
+            function search() {
+                if(!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                let val = localStorage.getItem(eng.value);
+                if(val==null)
+                {
+                    alert(eng.value+"는 없는 단어입니다.");
+                }
+                else
+                {
+                    alert(eng.value+" : "+localStorage.getItem(eng.value));
+                }
+            }
+
+            function del() {
+                if(!window.localStorage) {
+                    alert("로컬스토리지를 지원하지 않습니다.");
+                    return;
+                }
+                let val = localStorage.getItem(eng.value);
+                if(val==null)
+                {
+                    alert(eng.value+"는 없는 단어입니다.");
+                }
+                else
+                {
+                    localStorage.removeItem(eng.value);
+                }
+            }
+        </script>
+    </body>
+</html>
