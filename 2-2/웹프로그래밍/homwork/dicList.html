@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            td:first-child {
+                padding-right:3px;
+                border:1px solid green;
+                padding-left:3px;
+            }
+            #words {
+                background-color: gainsboro;
+                width:300px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>나의 단어장 모두 출력</h3>
+        <hr>
+        <div id="words"></div>
+        <script>
+                let wordsList="<table>";
+                for(let i=1;i<localStorage.length+1;i++)
+                {
+                    let key=localStorage.key(i-1);
+                    let val=localStorage.getItem(key);
+                    wordsList+="<tr><td>"+i+"</td><td>"+key+"</td><td>"+val+"</td></tr>";
+                }
+                wordsList+="</table>";
+                document.getElementById("words").innerHTML=wordsList;
+        </script>
+    </body>
+</html>
