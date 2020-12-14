@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        let p = prompt("숫자 입력")
+        if (isFinite(p)) {
+            if (p > 0) {
+                let n = parseInt(p);
+                let least = n % 10;
+                let most = 0;
+                while (n != 0) {
+                    most = n % 10;
+                    n = Math.floor(n / 10);
+                }
+                if (least == most)
+                    document.write("같음");
+                else
+                    document.write("다름");
+            }
+            else
+                document.write(str + ": 음수나 0은 다루지 않습니다.");
+        }
+        else {
+            document.write(str + ": 숫자가 아닙니다.");
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
