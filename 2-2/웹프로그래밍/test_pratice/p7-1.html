@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>난수 10개 생성</h3>
+        <hr>
+        <script>
+            let n=[];
+            for(let i=0;i<10;i++)
+            {
+                n[i]=Math.floor(Math.random()*100+1);
+            }
+            for(let i=0;i<10;i++)
+            {
+                document.writeln(n[i]);
+            }
+            document.write("<hr>");
+            var big=0;
+            for(let i=0;i<10;i++)
+            {
+                if(n[i]>big)
+                {
+                    big=n[i];
+                }
+            }
+            document.write("제일 큰 수는 "+big);
+            document.write("<hr>");
+            n.sort();
+            for(let i=0;i<10;i++)
+            {
+                document.writeln(n[i]);
+            }
+        </script>
+    </body>
+</html>
