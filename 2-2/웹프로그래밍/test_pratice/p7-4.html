@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>오전이면 lightblue, 오후이면 orange 배경</h3>
+        <hr>
+        <script>
+            let now=new Date();
+            let day=["일","월","화","수","목","금","토"];
+
+            if(now.getDay()==0)
+            {
+                document.body.style.background="pink";
+            }
+            else
+            {
+                document.body.style.background="gold"
+            }
+            
+            document.write("오늘 : ");
+            document.write(now.getDate(), "일,");
+            for(let i=0;i<day.length;i++)
+            {
+                if(now.getDay()==i)
+                    document.write(day[i],"요일");
+            }
+        </script>
+    </body>
+</html>
