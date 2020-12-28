@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            let names=new Array("wonsun","jaemmonlee","kitae","gracehwang");
+            let long_name=0;
+            let index=0;
+
+            document.write("이름 : ")
+            for(let i=0;i<names.length;i++)
+            {
+                document.writeln(names[i]);
+            }
+            document.write("<br>가장 긴 이름 : ")
+            for(let i=0;i<names.length;i++)
+            {
+                if(names[i].length>long_name)
+                {
+                    long_name=names[i].length;
+                    index=i;
+                }
+            }
+            document.write(names[index],"<br>")
+            names.sort();
+            document.write("가장 먼저 나오는 이름 : ",names[0],"<br>");
+            document.write("증가순 이름 : ")
+            for(let i=0;i<names.length;i++)
+            {
+                document.writeln(names[i]);
+            }
+        </script>
+    </body>
+</html>
