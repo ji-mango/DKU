@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>book 객체 만들기 : 프로토타입 이용</h3>
+        <hr>
+        <script>
+           function book(title,author,price) {
+               this.title=title;
+               this.author=author;
+               this.price=price;
+           } 
+
+            let book1=new book("HTML5","황기태",20000);
+
+            document.write("book : ");
+            document.write(book1.title, ',');
+            document.write(book1.author, ',');
+            document.write(book1.price);
+
+        </script>
+    </body>
+</html>

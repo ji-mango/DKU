@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h3>book 객체 만들기 : new Object() 이용</h3>
+        <hr>
+        <script>
+            let bookArray=new Array();
+            for (let i = 0; i < 5; i++) {
+                bookArray[i] = new Object();
+                bookArray[i].title = "HTML5";
+                bookArray[i].author = "황기태"
+                bookArray[i].price = 20000;
+
+                function set(title, author, price) {
+                    this.title = title;
+                    this.author = author;
+                    this.price = price;
+                }
+                book.set = set;
+            }
+            
+            for(let i=0;i<5;i++)
+            {
+                let val=prompt("콤마(,)로 분리하면서 책제목 저자 가격 순으로 입력");
+                let list=val.split(",");
+                bookArray[i].set(list[0].list[1],parseInt(list[2]))
+            }
+
+            for(let i=0;i<5;i++)
+            {
+                document.write(bookArray[i].title, ',');
+                document.write(bookArray[i].author, ',');
+                document.write(bookArray[i].price);
+            }
+
+        </script>
+    </body>
+</html>
